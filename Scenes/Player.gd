@@ -31,6 +31,8 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("run")
 	elif velocity.x == 0:
 		$AnimatedSprite2D.play("idle")
+	if velocity.y != 0:
+		$AnimatedSprite2D.play("jump")
 	#changing direction
 	if direction > 0:
 		$AnimatedSprite2D.flip_h = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://prxahbc8ihrk"]
+[gd_scene load_steps=16 format=3 uid="uid://prxahbc8ihrk"]
 
 [ext_resource type="Texture2D" uid="uid://dp75v1mhcavoj" path="res://Sprites/Slime/Individual Sprites/slime-idle-0.png" id="1_8j41k"]
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_g5twj"]
@@ -7,8 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://b0teroxtb6n4j" path="res://Sprites/Slime/Individual Sprites/slime-idle-3.png" id="4_5dn3m"]
 [ext_resource type="Texture2D" uid="uid://ba80eu2a4qb4w" path="res://Sprites/Slime/Individual Sprites/slime-move-0.png" id="5_0o3o0"]
 [ext_resource type="Texture2D" uid="uid://bvubuq3giypls" path="res://Sprites/Slime/Individual Sprites/slime-move-1.png" id="6_r2qly"]
+[ext_resource type="Texture2D" uid="uid://chitjetw7imvg" path="res://Sprites/Slime/Individual Sprites/slime-jump-0.png" id="6_r3pqm"]
 [ext_resource type="Texture2D" uid="uid://bek8bl18ovie6" path="res://Sprites/Slime/Individual Sprites/slime-move-2.png" id="7_rng1v"]
+[ext_resource type="Texture2D" uid="uid://cxqqwsvkfcc2i" path="res://Sprites/Slime/Individual Sprites/slime-jump-2.png" id="7_vfvir"]
 [ext_resource type="Texture2D" uid="uid://ck6cqpr16vppv" path="res://Sprites/Slime/Individual Sprites/slime-move-3.png" id="8_1eifw"]
+[ext_resource type="Texture2D" uid="uid://c1sax1abp36kn" path="res://Sprites/Slime/Individual Sprites/slime-jump-3.png" id="8_847p3"]
+[ext_resource type="Texture2D" uid="uid://bpxyd1l00jhrh" path="res://Sprites/Slime/Individual Sprites/slime-jump-4.png" id="9_n2nvw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qdtyl"]
 animations = [{
@@ -28,6 +32,23 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_r3pqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vfvir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_847p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_n2nvw")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -56,9 +77,9 @@ script = ExtResource("1_g5twj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_qdtyl")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.865437
+frame_progress = 0.357934
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_opsot")
