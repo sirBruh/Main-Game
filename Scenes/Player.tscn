@@ -1,9 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://prxahbc8ihrk"]
+[gd_scene load_steps=12 format=3 uid="uid://prxahbc8ihrk"]
 
 [ext_resource type="Texture2D" uid="uid://dp75v1mhcavoj" path="res://Sprites/Slime/Individual Sprites/slime-idle-0.png" id="1_8j41k"]
+[ext_resource type="Script" path="res://Scenes/Player.gd" id="1_g5twj"]
 [ext_resource type="Texture2D" uid="uid://cqd2m0t1sibqa" path="res://Sprites/Slime/Individual Sprites/slime-idle-1.png" id="2_8h7mh"]
 [ext_resource type="Texture2D" uid="uid://llhdcra4dxlj" path="res://Sprites/Slime/Individual Sprites/slime-idle-2.png" id="3_a550s"]
 [ext_resource type="Texture2D" uid="uid://b0teroxtb6n4j" path="res://Sprites/Slime/Individual Sprites/slime-idle-3.png" id="4_5dn3m"]
+[ext_resource type="Texture2D" uid="uid://ba80eu2a4qb4w" path="res://Sprites/Slime/Individual Sprites/slime-move-0.png" id="5_0o3o0"]
+[ext_resource type="Texture2D" uid="uid://bvubuq3giypls" path="res://Sprites/Slime/Individual Sprites/slime-move-1.png" id="6_r2qly"]
+[ext_resource type="Texture2D" uid="uid://bek8bl18ovie6" path="res://Sprites/Slime/Individual Sprites/slime-move-2.png" id="7_rng1v"]
+[ext_resource type="Texture2D" uid="uid://ck6cqpr16vppv" path="res://Sprites/Slime/Individual Sprites/slime-move-3.png" id="8_1eifw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qdtyl"]
 animations = [{
@@ -23,19 +28,37 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0o3o0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_r2qly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rng1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1eifw")
+}],
+"loop": true,
+"name": &"run",
+"speed": 7.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_opsot"]
 radius = 7.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_g5twj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_qdtyl")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
-frame_progress = 0.352426
+frame_progress = 0.865437
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_opsot")
