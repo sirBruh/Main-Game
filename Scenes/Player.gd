@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 @export var speed = 30
-@export var max_speed = 300
+@export var max_speed = 200
 @export var friction = 10
 @export var jump_velocity = -400
 
