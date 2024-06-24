@@ -27,6 +27,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, direction * max_speed, speed)
 	else:
 		velocity.x = move_toward(velocity.x, 0,friction)
+	#movement
 	if velocity.x > 0:
 		$AnimatedSprite2D.play("run")
 	elif velocity.x == 0:
