@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var max_speed = 200
 @export var friction = 10
 @export var jump_velocity = -400
-
+@onready var sprite = $AnimatedSprite2D
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -28,18 +28,20 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0,friction)
 	#movement
-	if velocity.x > 0:
-		$AnimatedSprite2D.play("run")
+	if velocity.x != 0:
+		if velocity.y == 0:
+			sprite.play("run")
+		if velocity.y != 0:
+			sprite.play("jump")
 	elif velocity.x == 0:
-		$AnimatedSprite2D.play("idle")
+		sprite.play("idle")
 	
-	if velocity.y != 0:
-		$AnimatedSprite2D.play("jump")
+	
 	#changing direction
 	if direction > 0:
-		$AnimatedSprite2D.flip_h = true
+		sprite.flip_h = true
 	elif direction < 0:
-		$AnimatedSprite2D.flip_h = false
+		sprite.flip_h = false
 	move_and_slide()
 	
 
