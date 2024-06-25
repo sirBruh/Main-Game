@@ -32,6 +32,7 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("run")
 	elif velocity.x == 0:
 		$AnimatedSprite2D.play("idle")
+	
 	if velocity.y != 0:
 		$AnimatedSprite2D.play("jump")
 	#changing direction
@@ -40,3 +41,8 @@ func _physics_process(delta):
 	elif direction < 0:
 		$AnimatedSprite2D.flip_h = false
 	move_and_slide()
+	
+
+func _on_hitbox_area_entered(area):
+	if area.is_in_group("Death"):
+		get_tree().reload_current_scene()

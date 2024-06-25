@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://prxahbc8ihrk"]
+[gd_scene load_steps=17 format=3 uid="uid://prxahbc8ihrk"]
 
 [ext_resource type="Texture2D" uid="uid://dp75v1mhcavoj" path="res://Sprites/Slime/Individual Sprites/slime-idle-0.png" id="1_8j41k"]
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_g5twj"]
@@ -68,10 +68,13 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_opsot"]
-radius = 9.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmitj"]
+size = Vector2(19, 15.3571)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_vd3bk"]
+radius = 6.10744
+
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g5twj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -79,9 +82,18 @@ position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_qdtyl")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.915167
+frame_progress = 0.720421
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
+position = Vector2(1, 1)
 scale = Vector2(1, 0.56)
-shape = SubResource("CircleShape2D_opsot")
+shape = SubResource("RectangleShape2D_xmitj")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(1, 1)
+scale = Vector2(1.53501, -0.756361)
+shape = SubResource("CircleShape2D_vd3bk")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
