@@ -34,8 +34,10 @@ func _physics_process(delta):
 		if velocity.y != 0:
 			sprite.play("jump")
 	elif velocity.x == 0:
-		sprite.play("idle")
-	
+		if velocity.y == 0:
+			sprite.play("idle")
+		if velocity.y != 0:
+			sprite.play("jump")
 	
 	#changing direction
 	if direction > 0:
