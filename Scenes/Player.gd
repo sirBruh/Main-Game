@@ -28,17 +28,17 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0,friction)
 	#movement & playing the corresponding animations
-	while speed != 0:
-		if velocity.x != 0:
-			if velocity.y == 0:
-				sprite.play("run")
-			if velocity.y != 0:
-				sprite.play("jump")
-		elif velocity.x == 0:
-			if velocity.y == 0:
-				sprite.play("idle")
-			if velocity.y != 0:
-				sprite.play("jump")
+	
+	if velocity.x != 0:
+		if velocity.y == 0:
+			sprite.play("run")
+		if velocity.y != 0:
+			sprite.play("jump")
+	elif velocity.x == 0:
+		if velocity.y == 0:
+			sprite.play("idle")
+		if velocity.y != 0:
+			sprite.play("jump")
 			
 	
 	#changing direction
