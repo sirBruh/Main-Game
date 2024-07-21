@@ -1,9 +1,31 @@
-[gd_scene format=3 uid="uid://dpitssgwnofg5"]
+[gd_scene load_steps=2 format=3 uid="uid://dpitssgwnofg5"]
 
-[node name="Control" type="Control"]
+[ext_resource type="Texture2D" uid="uid://cyop2x2xotlsv" path="res://image (3).png" id="1_xlkrl"]
+
+[node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(-1293, -458)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(4, 4.05)
+texture = ExtResource("1_xlkrl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
