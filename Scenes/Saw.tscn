@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1k634x53bh4m"]
+
+[ext_resource type="Texture2D" uid="uid://b4x8ncvfkw540" path="res://Sprites/Saw.png" id="1_ockqs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k024f"]
+atlas = ExtResource("1_ockqs")
+region = Rect2(0, 0, 44, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4abyd"]
+atlas = ExtResource("1_ockqs")
+region = Rect2(44, 0, 44, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rudm"]
+atlas = ExtResource("1_ockqs")
+region = Rect2(0, 40, 44, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1am1o"]
+atlas = ExtResource("1_ockqs")
+region = Rect2(44, 40, 44, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhfnm"]
+atlas = ExtResource("1_ockqs")
+region = Rect2(0, 80, 44, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uxxpm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k024f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4abyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rudm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1am1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhfnm")
+}],
+"loop": true,
+"name": &"defaulspint",
+"speed": 7.0
+}]
+
+[node name="Saw" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uxxpm")
+animation = &"defaulspint"
+autoplay = "defaulspint"
+frame_progress = 0.381438
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -8, 8, -7, 18, 0, 22, 8, -22, 8, -18, 0, -8, -7)
