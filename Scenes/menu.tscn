@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpitssgwnofg5"]
+[gd_scene load_steps=6 format=3 uid="uid://dpitssgwnofg5"]
 
-[ext_resource type="Texture2D" uid="uid://cyop2x2xotlsv" path="res://image (3).png" id="1_xlkrl"]
+[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_fbaid"]
+[ext_resource type="Texture2D" uid="uid://cyop2x2xotlsv" path="res://Sprites/Tilemap/image (3).png" id="1_xlkrl"]
+[ext_resource type="Texture2D" uid="uid://0ed1ffbhnmrk" path="res://Sprites/Menu buttons/New Piskel-1.png-1.png.png" id="3_fnk5j"]
+[ext_resource type="Texture2D" uid="uid://db83wrho781x4" path="res://Sprites/Menu buttons/New Piskel-1.png-1.png (1).png" id="4_4yreg"]
+[ext_resource type="Texture2D" uid="uid://mg6uspfmm21t" path="res://Sprites/Menu buttons/New Piskel-1.png (1).png" id="5_0g3a8"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -10,6 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(-1293, -458)
+script = ExtResource("1_fbaid")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
@@ -19,23 +24,30 @@ texture = ExtResource("1_xlkrl")
 [node name="Play" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-offset_left = 695.0
-offset_top = 235.0
-offset_right = 852.0
-offset_bottom = 338.0
+offset_left = 33.0
+offset_top = 178.0
+offset_right = 198.0
+offset_bottom = 289.0
+icon = ExtResource("3_fnk5j")
 
 [node name="Exit" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-offset_left = 982.0
-offset_top = 348.0
-offset_right = 1139.0
-offset_bottom = 451.0
+offset_left = 33.0
+offset_top = 404.0
+offset_right = 198.0
+offset_bottom = 515.0
+icon = ExtResource("4_4yreg")
 
 [node name="How to play" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-offset_left = 164.0
-offset_top = 390.0
-offset_right = 321.0
-offset_bottom = 493.0
+offset_left = 33.0
+offset_top = 291.0
+offset_right = 198.0
+offset_bottom = 402.0
+icon = ExtResource("5_0g3a8")
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="How to play" to="." method="_on_how_to_play_pressed"]

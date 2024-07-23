@@ -50,4 +50,4 @@ func _physics_process(delta):
 
 func _on_hitbox_area_entered(area):
 	if area.is_in_group("Death"):
-		get_tree().reload_current_scene()
+		get_tree().change_scene_to_file("res://Scenes/menu.tscn")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://crtlvjaxhobda"]
+
+[ext_resource type="Texture2D" uid="uid://d0chrts5ctw85" path="res://Sprites/Slime/Individual Sprites/projectile.png" id="1_kwtyl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4dxcq"]
+radius = 5.99998
+
+[node name="SlimBullet" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kwtyl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+rotation = 1.57313
+shape = SubResource("CapsuleShape2D_4dxcq")
