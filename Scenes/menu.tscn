@@ -1,102 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dpitssgwnofg5"]
+[gd_scene load_steps=3 format=3 uid="uid://dpitssgwnofg5"]
 
 [ext_resource type="Script" path="res://Scenes/menu.gd" id="1_fbaid"]
 [ext_resource type="Texture2D" uid="uid://cyop2x2xotlsv" path="res://Sprites/Tilemap/image (3).png" id="1_xlkrl"]
-[ext_resource type="Texture2D" uid="uid://cnbldp0h0v41c" path="res://Sprites/Buttons - Full Pack.png" id="3_vr6vu"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_so4cu"]
-atlas = ExtResource("3_vr6vu")
-region = Rect2(128, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lg8t7"]
-atlas = ExtResource("3_vr6vu")
-region = Rect2(128, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_se4s5"]
-atlas = ExtResource("3_vr6vu")
-region = Rect2(160, 32, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ua7gg"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_so4cu")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lg8t7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_se4s5")
-}],
-"loop": true,
-"name": &"pressed",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ainvd"]
-atlas = ExtResource("3_vr6vu")
-region = Rect2(128, 128, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mqlhk"]
-atlas = ExtResource("3_vr6vu")
-region = Rect2(160, 128, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_yxkya"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ainvd")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ainvd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mqlhk")
-}],
-"loop": true,
-"name": &"pressed",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iq3ow"]
-atlas = ExtResource("3_vr6vu")
-region = Rect2(192, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yomhp"]
-atlas = ExtResource("3_vr6vu")
-region = Rect2(224, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7ynsw"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iq3ow")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iq3ow")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yomhp")
-}],
-"loop": false,
-"name": &"pressed",
-"speed": 5.0
-}]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -121,11 +26,6 @@ offset_top = 178.0
 offset_right = 393.0
 offset_bottom = 302.0
 
-[node name="AnimatedSprite2D_Play" type="AnimatedSprite2D" parent="Play"]
-sprite_frames = SubResource("SpriteFrames_ua7gg")
-animation = &"idle"
-autoplay = "idle"
-
 [node name="How to play" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
@@ -134,11 +34,6 @@ offset_top = 318.0
 offset_right = 393.0
 offset_bottom = 442.0
 
-[node name="AnimatedSprite2D_How_to_Play" type="AnimatedSprite2D" parent="How to play"]
-sprite_frames = SubResource("SpriteFrames_yxkya")
-animation = &"idle"
-autoplay = "idle"
-
 [node name="Quit" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
@@ -146,12 +41,6 @@ offset_left = 33.0
 offset_top = 458.0
 offset_right = 393.0
 offset_bottom = 582.0
-
-[node name="AnimatedSprite2D_Quit" type="AnimatedSprite2D" parent="Quit"]
-position = Vector2(0, -280)
-sprite_frames = SubResource("SpriteFrames_7ynsw")
-animation = &"idle"
-autoplay = "idle"
 
 [node name="Press Timer" type="Timer" parent="."]
 
