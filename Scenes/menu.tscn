@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://syrisbghhc7s" path="res://Sprites/Buttons/70b3829cd034c42c2d877fb4f0b4941b-1.png.png" id="3_bygdx"]
 [ext_resource type="Texture2D" uid="uid://bmaumpvqkp1wj" path="res://Sprites/Buttons/83f20860c6caf09676360e27e5c6e09c-1.png.png" id="4_mts54"]
 [ext_resource type="Texture2D" uid="uid://bfbgubbt24eu3" path="res://Sprites/Buttons/27c7ffb7a9691f578d4a8d3bdb32fc5a-1.png.png" id="5_ymuxo"]
-[ext_resource type="Texture2D" uid="uid://dqradjepcs76e" path="res://Sprites/Buttons/ad1155caee69113bcfed86d4fe8715c1-1.png.png" id="6_8dh5r"]
+[ext_resource type="Texture2D" uid="uid://cf2rhtjimuhss" path="res://Sprites/Buttons/ad1155caee69113bcfed86d4fe8715c1-1.png-1.png.png" id="6_pbsy6"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -63,7 +63,7 @@ offset_right = 501.933
 offset_bottom = -405.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_8dh5r")
+texture = ExtResource("6_pbsy6")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="How to play" to="." method="_on_play_pressed"]
