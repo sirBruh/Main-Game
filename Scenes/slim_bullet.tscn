@@ -7,6 +7,7 @@
 radius = 5.99998
 
 [node name="SlimBullet" type="Area2D"]
+scale = Vector2(0.240001, 0.240001)
 script = ExtResource("1_0y5p8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -458,7 +458,7 @@ position = Vector2(2593, 218)
 position = Vector2(3011, 216)
 
 [node name="Spikes" parent="." groups=["Death"] instance=ExtResource("1_jn0pj")]
-position = Vector2(399, 206)
+position = Vector2(412, 206)
 scale = Vector2(16.08, 1)
 
 [node name="Spikes2" parent="." groups=["Death"] instance=ExtResource("1_jn0pj")]
@@ -470,7 +470,7 @@ position = Vector2(1721, 451)
 scale = Vector2(451.322, -1.84556)
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_i3bq6")]
-position = Vector2(48, 34)
+position = Vector2(35, 39)
 scale = Vector2(0.600001, 0.600001)
 
 [node name="AnimatedSprite2D" parent="Player" index="0"]
@@ -481,7 +481,7 @@ frame_progress = 0.0
 [node name="CollisionShape2D" parent="Player" index="1" groups=["Player"]]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(2, 2)
+zoom = Vector2(2.5, 2.5)
 limit_left = -1000000
 limit_top = -1000000
 limit_right = 1000000

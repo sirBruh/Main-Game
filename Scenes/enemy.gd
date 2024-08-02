@@ -19,3 +19,6 @@ func _process(delta):
 		direction = -1
 	elif position.x < left_limit:
 		direction = 1
+
+
+

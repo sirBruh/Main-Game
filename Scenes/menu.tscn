@@ -26,28 +26,28 @@ texture = ExtResource("1_xlkrl")
 [node name="Play" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-offset_left = 313.911
-offset_top = 323.0
-offset_right = 555.911
-offset_bottom = 454.0
+offset_left = 843.547
+offset_top = 360.0
+offset_right = 1085.55
+offset_bottom = 491.0
 icon = ExtResource("3_bygdx")
 
 [node name="How to play" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-offset_left = 313.912
-offset_top = 546.0
-offset_right = 555.911
-offset_bottom = 677.0
+offset_left = 844.547
+offset_top = 532.0
+offset_right = 1086.55
+offset_bottom = 663.0
 icon = ExtResource("4_mts54")
 
 [node name="Quit" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-offset_left = 311.913
-offset_top = 774.0
-offset_right = 567.913
-offset_bottom = 905.0
+offset_left = 840.549
+offset_top = 712.0
+offset_right = 1096.55
+offset_bottom = 843.0
 icon = ExtResource("5_ymuxo")
 
 [node name="Press Timer" type="Timer" parent="."]
@@ -57,10 +57,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 281.933
-offset_top = 102.0
-offset_right = 501.933
-offset_bottom = -405.0
+offset_left = 392.854
+offset_top = 156.0
+offset_right = -391.146
+offset_bottom = -799.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_pbsy6")
