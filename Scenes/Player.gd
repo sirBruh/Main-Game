@@ -72,8 +72,9 @@ func _on_hitbox_area_entered(area):
 
 func _input(event):
 	if event.is_action_pressed("Fire") and is_on_floor():
+		sprite.play("attack")
 		var blob = blob.instantiate()
 		blob.global_position = global_position
 		world.add_child(blob)
-		sprite.play("attack")
+		
 

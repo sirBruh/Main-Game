@@ -87,7 +87,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t2gk0")
 }],
-"loop": true,
+"loop": false,
 "name": &"die",
 "speed": 9.0
 }, {
@@ -133,7 +133,7 @@ script = ExtResource("2_rr6og")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bf4o0")
-animation = &"run"
+animation = &"die"
 autoplay = "run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -143,7 +143,7 @@ shape = SubResource("CircleShape2D_7rbqn")
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, 7)
+position = Vector2(0, 9)
 shape = SubResource("CapsuleShape2D_x4kr8")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
