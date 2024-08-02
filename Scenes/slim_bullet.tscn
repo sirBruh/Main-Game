@@ -6,7 +6,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4dxcq"]
 radius = 5.99998
 
-[node name="SlimBullet" type="Area2D"]
+[node name="SlimBullet" type="Area2D" groups=["Enemy_Death"]]
 scale = Vector2(0.240001, 0.240001)
 script = ExtResource("1_0y5p8")
 
