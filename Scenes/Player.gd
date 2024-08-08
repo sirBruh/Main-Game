@@ -8,6 +8,7 @@ var direction_facing = "right"
 const blob = preload("res://Scenes/slim_bullet.tscn")
 @onready var world = get_node("/root/World")
 var direction = Vector2.ZERO
+var last_direction = Vector2.ZERO
 @onready var sprite = $AnimatedSprite2D
 #other vars
 #@export var start_gravity = 1700
@@ -38,6 +39,7 @@ func _physics_process(delta):
 	direction = Input.get_axis("walk_left", "walk_right")
 	if direction:
 		velocity.x = move_toward(velocity.x, direction * max_speed, speed)
+		last_direction = direction
 	else:
 		velocity.x = move_toward(velocity.x, 0,friction)
 	#movement & playing the corresponding animations
@@ -65,7 +67,7 @@ func _physics_process(delta):
 #death
 func _on_hitbox_area_entered(area):
 	if area.is_in_group("Death"):
-		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/death_screen.tscn")
 
 #shooting code
 
@@ -76,5 +78,6 @@ func _input(event):
 		var blob = blob.instantiate()
 		blob.global_position = global_position
 		world.add_child(blob)
+		blob.look_at(last_direction)
 		
 

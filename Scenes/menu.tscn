@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dpitssgwnofg5"]
 
 [ext_resource type="Script" path="res://Scenes/menu.gd" id="1_fbaid"]
-[ext_resource type="Texture2D" uid="uid://cyop2x2xotlsv" path="res://Sprites/Tilemap/image (3).png" id="1_xlkrl"]
+[ext_resource type="Texture2D" uid="uid://cyop2x2xotlsv" path="res://Sprites/Tilemap/Dungeon Tile Set/image (3).png" id="1_xlkrl"]
 [ext_resource type="Texture2D" uid="uid://syrisbghhc7s" path="res://Sprites/Buttons/70b3829cd034c42c2d877fb4f0b4941b-1.png.png" id="3_bygdx"]
 [ext_resource type="Texture2D" uid="uid://bmaumpvqkp1wj" path="res://Sprites/Buttons/83f20860c6caf09676360e27e5c6e09c-1.png.png" id="4_mts54"]
 [ext_resource type="Texture2D" uid="uid://bfbgubbt24eu3" path="res://Sprites/Buttons/27c7ffb7a9691f578d4a8d3bdb32fc5a-1.png.png" id="5_ymuxo"]
@@ -66,5 +66,5 @@ grow_vertical = 2
 texture = ExtResource("6_pbsy6")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="How to play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="How to play" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

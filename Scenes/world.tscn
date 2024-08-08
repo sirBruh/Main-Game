@@ -475,8 +475,6 @@ scale = Vector2(0.600001, 0.600001)
 
 [node name="AnimatedSprite2D" parent="Player" index="0"]
 animation = &"jump"
-frame = 0
-frame_progress = 0.0
 
 [node name="CollisionShape2D" parent="Player" index="1" groups=["Player"]]
 

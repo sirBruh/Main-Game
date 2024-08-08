@@ -27,3 +27,5 @@ func _on_hitbox_area_entered(area):
 	if area.is_in_group("Enemy_Death"):
 		dead = true
 		sprite.play("die")
+		await sprite.animation_finished
+		queue_free()

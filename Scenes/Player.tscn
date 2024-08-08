@@ -109,10 +109,13 @@ shape = SubResource("RectangleShape2D_xmitj")
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(1, 1)
+position = Vector2(1, 2)
 scale = Vector2(1.53501, -0.756361)
 shape = SubResource("CircleShape2D_vd3bk")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(2, 1)
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
