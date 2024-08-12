@@ -8,7 +8,6 @@ var direction_facing = "right"
 const blob = preload("res://Scenes/slim_bullet.tscn")
 @onready var world = get_node("/root/World")
 var direction = Vector2.ZERO
-var last_direction = Vector2.ZERO
 @onready var sprite = $AnimatedSprite2D
 #other vars
 #@export var start_gravity = 1700
@@ -30,16 +29,11 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
-
-		
-
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	direction = Input.get_axis("walk_left", "walk_right")
 	if direction:
 		velocity.x = move_toward(velocity.x, direction * max_speed, speed)
-		last_direction = direction
 	else:
 		velocity.x = move_toward(velocity.x, 0,friction)
 	#movement & playing the corresponding animations
@@ -75,9 +69,9 @@ func _on_hitbox_area_entered(area):
 func _input(event):
 	if event.is_action_pressed("Fire") and is_on_floor():
 		sprite.play("attack")
-		var blob = blob.instantiate()
-		blob.global_position = global_position
-		world.add_child(blob)
-		blob.look_at(last_direction)
+		var new_blob = blob.instantiate()
+		world.add_child(new_blob)
+		new_blob.global_position = global_position
+		new_blob.last_direction = direction_facing 
 		
 
