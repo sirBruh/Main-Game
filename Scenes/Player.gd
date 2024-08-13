@@ -73,5 +73,3 @@ func _input(event):
 		world.add_child(new_blob)
 		new_blob.global_position = global_position
 		new_blob.last_direction = direction_facing 
-		
-
