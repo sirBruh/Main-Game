@@ -1,13 +1,14 @@
 extends CharacterBody2D
 
-var direction_facing = "right"
+
 @export var speed = 30
 @export var max_speed = 200
 @export var friction = 3
 @export var jump_velocity = -400
 const blob = preload("res://Scenes/slim_bullet.tscn")
 @onready var world = get_node("/root/World")
-var direction = Vector2.ZERO
+@export var direction = Vector2.ZERO
+@export var direction_facing = "right"
 @onready var sprite = $AnimatedSprite2D
 #other vars
 #@export var start_gravity = 1700
@@ -55,7 +56,7 @@ func _physics_process(delta):
 		sprite.flip_h = true
 		direction_facing == "right"
 	elif direction < 0:
-		sprite.flip_h = false
+		sprite.flip_h= false
 		direction_facing == "left"
 	move_and_slide()
 #death
@@ -72,4 +73,4 @@ func _input(event):
 		var new_blob = blob.instantiate()
 		world.add_child(new_blob)
 		new_blob.global_position = global_position
-		new_blob.last_direction = direction_facing 
+		new_blob.direction_facing = direction_facing 
