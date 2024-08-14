@@ -473,9 +473,6 @@ scale = Vector2(451.322, -1.84556)
 position = Vector2(35, 39)
 scale = Vector2(0.600001, 0.600001)
 
-[node name="AnimatedSprite2D" parent="Player" index="0"]
-animation = &"jump"
-
 [node name="CollisionShape2D" parent="Player" index="1" groups=["Player"]]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

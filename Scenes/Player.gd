@@ -9,7 +9,7 @@ const blob = preload("res://Scenes/slim_bullet.tscn")
 @onready var world = get_node("/root/World")
 @export var direction = Vector2.ZERO
 @export var direction_facing = "right"
-@onready var sprite = $AnimatedSprite2D
+@onready var sprite2 = $Sprite
 #other vars
 #@export var start_gravity = 1700
 #@export var coyote_time = 140 # in ms
@@ -20,7 +20,8 @@ const blob = preload("res://Scenes/slim_bullet.tscn")
 #@export var y_smoothing = 0.8
 #@export var air_x_smoothing = 0.10
 #@export var MAX_FALL_SPEED = 25000
-
+func ready():
+	pass
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -38,38 +39,40 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0,friction)
 	#movement & playing the corresponding animations
-	
+	if Input.is_action_just_pressed("walk_left"):
+		sprite2.flip_h = true
+	elif Input.is_action_just_pressed("walk_right"):
+		sprite2.flip_h = false
 	#running animation
 	if velocity.x != 0 and is_on_floor():
-			sprite.play("run")
+			sprite2.play("run")
+			if velocity.x > 0:
+				direction_facing == "right"
+			elif velocity.x < 0:
+				direction_facing == "left"
 	#idle animation
 	elif velocity.x == 0 and is_on_floor():
-			sprite.play("idle")
+			sprite2.play("idle")
 	#jump animation
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
-		sprite.play("jump")		
+		sprite2.play("jump")		
 	#shoot animation
 	
 	#changing direction
-	if velocity.x > 0:
-		sprite.flip_h = true
-		direction_facing == "right"
-	elif velocity.x < 0:
-		sprite.flip_h= false
-		direction_facing == "left"
+	
 	move_and_slide()
 #death
 func _on_hitbox_area_entered(area):
 	if area.is_in_group("Death"):
 		get_tree().change_scene_to_file("res://Scenes/death_screen.tscn")
 
-#shoshooting code
+#shooting code
 
 
 func _input(event):
 	if event.is_action_pressed("Fire") and is_on_floor():
-		sprite.play("attack")
+		sprite2.play("attack")
 		var new_blob = blob.instantiate()
 		world.add_child(new_blob)
 		new_blob.global_position = global_position

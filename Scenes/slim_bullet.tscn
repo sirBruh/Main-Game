@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://crtlvjaxhobda"]
 
 [ext_resource type="Script" path="res://Scenes/slim_bullet.gd" id="1_0y5p8"]
-[ext_resource type="Texture2D" uid="uid://d0chrts5ctw85" path="res://Sprites/Slime/Individual Sprites/projectile.png" id="1_kwtyl"]
+[ext_resource type="Texture2D" uid="uid://cacjnu30evl0k" path="res://Sprites/Slime/Individual Sprites/projectile2.png" id="2_0qfpw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4dxcq"]
 radius = 5.99998
@@ -11,7 +11,7 @@ scale = Vector2(0.240001, 0.240001)
 script = ExtResource("1_0y5p8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_kwtyl")
+texture = ExtResource("2_0qfpw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)

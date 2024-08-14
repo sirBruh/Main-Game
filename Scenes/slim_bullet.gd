@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed = 20
+@export var speed = 20.0
 @onready var bullet = $Sprite2D
 var direction = Player.direction
 var direction_facing = Player.direction_facing
@@ -12,10 +12,8 @@ func _ready():
 func set_direction():
 	if direction > 0:
 		bullet.flip_h = false
-		direction_facing = "right"
 	elif direction < 0:
 		bullet.flip_h = true
-		direction_facing = "left"
 	if direction_facing == "right":
 		direction = Vector2.RIGHT
 	elif direction_facing == "left":
@@ -23,5 +21,5 @@ func set_direction():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 		var velocity = direction * speed
-		global_position += velocity
+		
 
