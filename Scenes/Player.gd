@@ -52,10 +52,10 @@ func _physics_process(delta):
 	#shoot animation
 	
 	#changing direction
-	if direction > 0:
+	if velocity.x > 0:
 		sprite.flip_h = true
 		direction_facing == "right"
-	elif direction < 0:
+	elif velocity.x < 0:
 		sprite.flip_h= false
 		direction_facing == "left"
 	move_and_slide()
@@ -64,7 +64,7 @@ func _on_hitbox_area_entered(area):
 	if area.is_in_group("Death"):
 		get_tree().change_scene_to_file("res://Scenes/death_screen.tscn")
 
-#shooting code
+#shoshooting code
 
 
 func _input(event):

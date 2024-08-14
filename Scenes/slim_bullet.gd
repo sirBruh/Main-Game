@@ -22,7 +22,6 @@ func set_direction():
 		direction = Vector2.LEFT
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	if direction != Vector2.ZERO:
 		var velocity = direction * speed
 		global_position += velocity
 
