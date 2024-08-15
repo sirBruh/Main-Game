@@ -22,4 +22,3 @@ func set_direction():
 func _physics_process(delta):
 		var velocity = direction * speed
 		
-

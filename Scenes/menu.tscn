@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Scenes/menu.gd" id="1_fbaid"]
 [ext_resource type="Texture2D" uid="uid://cyop2x2xotlsv" path="res://Sprites/Tilemap/Dungeon Tile Set/image (3).png" id="1_xlkrl"]
-[ext_resource type="Texture2D" uid="uid://syrisbghhc7s" path="res://Sprites/Buttons/70b3829cd034c42c2d877fb4f0b4941b-1.png.png" id="3_bygdx"]
-[ext_resource type="Texture2D" uid="uid://bmaumpvqkp1wj" path="res://Sprites/Buttons/83f20860c6caf09676360e27e5c6e09c-1.png.png" id="4_mts54"]
-[ext_resource type="Texture2D" uid="uid://bfbgubbt24eu3" path="res://Sprites/Buttons/27c7ffb7a9691f578d4a8d3bdb32fc5a-1.png.png" id="5_ymuxo"]
+[ext_resource type="Texture2D" uid="uid://cx45r717n0wdj" path="res://Sprites/Buttons/27c7ffb7a9691f578d4a8d3bdb32fc5a-1.png-1.png (1).png" id="3_dy8yc"]
+[ext_resource type="Texture2D" uid="uid://cdti0b2x6mpl7" path="res://Sprites/Buttons/27c7ffb7a9691f578d4a8d3bdb32fc5a-1.png-1.png (2).png" id="4_0tjk6"]
+[ext_resource type="Texture2D" uid="uid://bpx66pojn8u2b" path="res://Sprites/Buttons/27c7ffb7a9691f578d4a8d3bdb32fc5a-1.png-1.png.png" id="5_ghfi4"]
 [ext_resource type="Texture2D" uid="uid://cf2rhtjimuhss" path="res://Sprites/Buttons/ad1155caee69113bcfed86d4fe8715c1-1.png-1.png.png" id="6_pbsy6"]
 
 [node name="Menu" type="Control"]
@@ -30,7 +30,7 @@ offset_left = 843.547
 offset_top = 360.0
 offset_right = 1085.55
 offset_bottom = 491.0
-icon = ExtResource("3_bygdx")
+icon = ExtResource("3_dy8yc")
 
 [node name="How to play" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)
@@ -39,7 +39,7 @@ offset_left = 844.547
 offset_top = 532.0
 offset_right = 1086.55
 offset_bottom = 663.0
-icon = ExtResource("4_mts54")
+icon = ExtResource("4_0tjk6")
 
 [node name="Quit" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)
@@ -48,7 +48,7 @@ offset_left = 840.549
 offset_top = 712.0
 offset_right = 1096.55
 offset_bottom = 843.0
-icon = ExtResource("5_ymuxo")
+icon = ExtResource("5_ghfi4")
 
 [node name="Press Timer" type="Timer" parent="."]
 
