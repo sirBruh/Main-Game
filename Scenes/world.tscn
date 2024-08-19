@@ -303,11 +303,9 @@ scale = Vector2(24.7046, 1.036)
 position = Vector2(1721, 451)
 scale = Vector2(451.322, -1.84556)
 
-[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_i3bq6")]
+[node name="Player" parent="." instance=ExtResource("1_i3bq6")]
 position = Vector2(35, 39)
 scale = Vector2(0.600001, 0.600001)
-
-[node name="CollisionShape2D" parent="Player" index="1" groups=["Player"]]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2.5, 2.5)
@@ -336,5 +334,3 @@ right_limit = 1300
 position = Vector2(1532, 128)
 left_limit = 1460
 right_limit = 1600
-
-[editable path="Player"]

@@ -2,8 +2,9 @@ extends Area2D
 
 @export var speed = 20.0
 @onready var bullet = $Sprite2D
-var direction = Player.direction
-var direction_facing = Player.direction_facing
+@onready var Player = get_tree().get_first_node_in_group("Player")
+@onready var direction = Player.direction
+@onready var direction_facing = Player.direction_facing
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
