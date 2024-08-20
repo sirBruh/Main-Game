@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://Scenes/menu.gd" id="1_fbaid"]
 [ext_resource type="Texture2D" uid="uid://cyop2x2xotlsv" path="res://Sprites/Tilemap/Dungeon Tile Set/image (3).png" id="1_xlkrl"]
-[ext_resource type="Texture2D" uid="uid://cx45r717n0wdj" path="res://Sprites/Buttons/27c7ffb7a9691f578d4a8d3bdb32fc5a-1.png-1.png (1).png" id="3_dy8yc"]
-[ext_resource type="Texture2D" uid="uid://cdti0b2x6mpl7" path="res://Sprites/Buttons/27c7ffb7a9691f578d4a8d3bdb32fc5a-1.png-1.png (2).png" id="4_0tjk6"]
-[ext_resource type="Texture2D" uid="uid://bpx66pojn8u2b" path="res://Sprites/Buttons/27c7ffb7a9691f578d4a8d3bdb32fc5a-1.png-1.png.png" id="5_ghfi4"]
-[ext_resource type="Texture2D" uid="uid://baalek2gfinfs" path="res://Sprites/Buttons/c556d7ce2579dd30782f020efbc9ad89-1.png.png" id="6_mkvlb"]
+[ext_resource type="Texture2D" uid="uid://cx45r717n0wdj" path="res://Sprites/Buttons & Titles/27c7ffb7a9691f578d4a8d3bdb32fc5a-1.png-1.png (1).png" id="3_dy8yc"]
+[ext_resource type="Texture2D" uid="uid://cdti0b2x6mpl7" path="res://Sprites/Buttons & Titles/27c7ffb7a9691f578d4a8d3bdb32fc5a-1.png-1.png (2).png" id="4_0tjk6"]
+[ext_resource type="Texture2D" uid="uid://bpx66pojn8u2b" path="res://Sprites/Buttons & Titles/27c7ffb7a9691f578d4a8d3bdb32fc5a-1.png-1.png.png" id="5_ghfi4"]
+[ext_resource type="Texture2D" uid="uid://baalek2gfinfs" path="res://Sprites/Buttons & Titles/c556d7ce2579dd30782f020efbc9ad89-1.png.png" id="6_mkvlb"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -31,6 +31,7 @@ offset_top = 360.0
 offset_right = 1085.55
 offset_bottom = 491.0
 icon = ExtResource("3_dy8yc")
+flat = true
 
 [node name="How to play" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)
@@ -40,6 +41,7 @@ offset_top = 532.0
 offset_right = 1086.55
 offset_bottom = 663.0
 icon = ExtResource("4_0tjk6")
+flat = true
 
 [node name="Quit" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)
@@ -49,6 +51,7 @@ offset_top = 712.0
 offset_right = 1096.55
 offset_bottom = 843.0
 icon = ExtResource("5_ghfi4")
+flat = true
 
 [node name="Press Timer" type="Timer" parent="."]
 

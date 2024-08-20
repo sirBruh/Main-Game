@@ -93,7 +93,7 @@ size = Vector2(19, 15.3571)
 [sub_resource type="CircleShape2D" id="CircleShape2D_vd3bk"]
 radius = 6.10744
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_g5twj")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]

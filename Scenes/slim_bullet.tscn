@@ -6,8 +6,10 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4dxcq"]
 radius = 5.99998
 
-[node name="SlimBullet" type="Area2D" groups=["Enemy_Death"]]
+[node name="SlimBullet" type="CharacterBody2D" groups=["Enemy_Death"]]
 scale = Vector2(0.240001, 0.240001)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_0y5p8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -16,4 +18,5 @@ texture = ExtResource("2_0qfpw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
 rotation = 1.57313
+scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_4dxcq")

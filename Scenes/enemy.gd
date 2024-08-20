@@ -23,8 +23,9 @@ func _process(delta):
 	elif position.x < left_limit:
 		direction = 1
 
-func _on_hitbox_area_entered(area):
-	if area.is_in_group("Enemy_Death"):
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Enemy_Death"):
 		dead = true
 		sprite.play("die")
 		await sprite.animation_finished

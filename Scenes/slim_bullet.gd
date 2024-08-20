@@ -1,10 +1,10 @@
-extends Area2D
+extends CharacterBody2D
 
-@export var speed = 20.0
+@export var speed = 300.0
 @onready var bullet = $Sprite2D
-@onready var Player = get_tree().get_first_node_in_group("Player")
-@onready var direction = Player.direction
-@onready var direction_facing = Player.direction_facing
+@onready var player = get_tree().get_first_node_in_group("Player")
+@onready var direction = player.direction
+@onready var direction_facing = player.direction_facing
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,5 +21,9 @@ func set_direction():
 		direction = Vector2.LEFT
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-		var velocity = direction * speed
+	if direction_facing == "right":
+		direction = Vector2.RIGHT
+	elif direction_facing == "left":
+		direction = Vector2.LEFT
+	translate(direction * speed * delta)
 		

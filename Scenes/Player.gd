@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var jump_velocity = -400
 const blob = preload("res://Scenes/slim_bullet.tscn")
 @onready var world = get_node("/root/World")
-@export var direction = Vector2.ZERO
+@onready var direction = Vector2.ZERO
 @export var direction_facing = "right"
 @onready var sprite = $Sprite
 #other vars

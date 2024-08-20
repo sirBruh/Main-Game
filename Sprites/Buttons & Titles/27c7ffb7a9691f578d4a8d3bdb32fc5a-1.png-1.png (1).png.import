@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdti0b2x6mpl7"
-path="res://.godot/imported/27c7ffb7a9691f578d4a8d3bdb32fc5a-1.png-1.png (2).png-26374a6d1ee2351a4a41f69d8f2fabfe.ctex"
+uid="uid://cx45r717n0wdj"
+path="res://.godot/imported/27c7ffb7a9691f578d4a8d3bdb32fc5a-1.png-1.png (1).png-af96a97387355062469e8329f9b98606.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Buttons/27c7ffb7a9691f578d4a8d3bdb32fc5a-1.png-1.png (2).png"
-dest_files=["res://.godot/imported/27c7ffb7a9691f578d4a8d3bdb32fc5a-1.png-1.png (2).png-26374a6d1ee2351a4a41f69d8f2fabfe.ctex"]
+source_file="res://Sprites/Buttons & Titles/27c7ffb7a9691f578d4a8d3bdb32fc5a-1.png-1.png (1).png"
+dest_files=["res://.godot/imported/27c7ffb7a9691f578d4a8d3bdb32fc5a-1.png-1.png (1).png-af96a97387355062469e8329f9b98606.ctex"]
 
 [params]
 
