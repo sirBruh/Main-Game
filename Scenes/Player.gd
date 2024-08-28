@@ -57,8 +57,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
 		sprite.play("jump")		
-	#shoot animation
-	
+
 	#changing direction
 	
 	move_and_slide()
@@ -68,10 +67,8 @@ func _on_hitbox_area_entered(area):
 		get_tree().change_scene_to_file("res://Scenes/death_screen.tscn")
 
 #shooting code
-
-
-func _input(event):
-	if event.is_action_pressed("Fire") and is_on_floor():
+func input(event):
+	if event.is_action_pressed("Fire"):
 		var new_blob = blob.instantiate()
 		world.add_child(new_blob)
 		new_blob.global_position = global_position

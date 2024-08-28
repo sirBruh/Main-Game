@@ -6,13 +6,13 @@
 script/source = "extends Area2D
 
 var speed = 350
-@onready var direction = Vector2.RIGHT
+@export var direction = Vector2.RIGHT
 
 
 
 func ready():
 	pass
-func process(delta):
+func _process(delta: float) -> void:
 	translate(direction * speed * delta)
 "
 
