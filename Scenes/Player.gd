@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var max_speed = 200
 @export var friction = 3
 @export var jump_velocity = -400
-const blob = preload("res://Scenes/slim_bullet.tscn")
+const blob = preload("res://Scenes/blob.tscn")
 @onready var world = get_node("/root/World")
 @onready var direction = Vector2.ZERO
 @export var direction_facing = "right"
@@ -72,8 +72,6 @@ func _on_hitbox_area_entered(area):
 
 func _input(event):
 	if event.is_action_pressed("Fire") and is_on_floor():
-		sprite.play("attack")
 		var new_blob = blob.instantiate()
 		world.add_child(new_blob)
 		new_blob.global_position = global_position
-		new_blob.direction_facing = direction_facing 
