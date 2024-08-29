@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://3a1fc1v4bgja"]
+
+[ext_resource type="Texture2D" uid="uid://cs54iaahmov2j" path="res://Sprites/Tilemap/Dungeon Tile Set/dcfjk88-70a46cac-7b7b-4117-870d-657e13e078cd.png" id="1_x3ciu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d2wwp"]
+radius = 82.0
+height = 206.0
+
+[node name="Door" type="Area2D" groups=["End"]]
+scale = Vector2(0.240753, 0.240753)
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["End"]]
+texture = ExtResource("1_x3ciu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["End"]]
+shape = SubResource("CapsuleShape2D_d2wwp")

@@ -46,3 +46,6 @@ offset_top = 129.0
 offset_right = 1192.0
 offset_bottom = 207.0
 texture = ExtResource("5_vef7c")
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

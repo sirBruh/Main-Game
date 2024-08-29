@@ -39,9 +39,9 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0,friction)
 	#movement & playing the corresponding animations
-	if Input.is_action_just_pressed("walk_left"):
+	if Input.is_action_just_pressed("walk_left") or velocity.x < 0:
 		sprite.flip_h = false
-	elif Input.is_action_just_pressed("walk_right"):
+	elif Input.is_action_just_pressed("walk_right") or velocity.x > 0:
 		sprite.flip_h = true
 	#running animation
 	if velocity.x != 0 and is_on_floor():
@@ -65,7 +65,8 @@ func _physics_process(delta):
 func _on_hitbox_area_entered(area):
 	if area.is_in_group("Death"):
 		get_tree().change_scene_to_file("res://Scenes/death_screen.tscn")
-
+	if area.is_in_group("End"):
+		get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")
 #shooting code
 func input(event):
 	if event.is_action_pressed("Fire"):
