@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://prxahbc8ihrk"]
+[gd_scene load_steps=23 format=3 uid="uid://prxahbc8ihrk"]
 
 [ext_resource type="Texture2D" uid="uid://dp75v1mhcavoj" path="res://Sprites/Slime/Individual Sprites/slime-idle-0.png" id="1_8j41k"]
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_g5twj"]
@@ -8,11 +8,15 @@
 [ext_resource type="Texture2D" uid="uid://dsrcjwvfr2o2i" path="res://Sprites/Slime/Individual Sprites/slime-attack-1.png" id="3_vqdij"]
 [ext_resource type="Texture2D" uid="uid://b0teroxtb6n4j" path="res://Sprites/Slime/Individual Sprites/slime-idle-3.png" id="4_5dn3m"]
 [ext_resource type="Texture2D" uid="uid://ba80eu2a4qb4w" path="res://Sprites/Slime/Individual Sprites/slime-move-0.png" id="5_0o3o0"]
+[ext_resource type="Texture2D" uid="uid://bn1xvab7m28fq" path="res://Sprites/Slime/Individual Sprites/slime-die-0.png" id="5_24gwg"]
 [ext_resource type="Texture2D" uid="uid://bvubuq3giypls" path="res://Sprites/Slime/Individual Sprites/slime-move-1.png" id="6_r2qly"]
 [ext_resource type="Texture2D" uid="uid://chitjetw7imvg" path="res://Sprites/Slime/Individual Sprites/slime-jump-0.png" id="6_r3pqm"]
+[ext_resource type="Texture2D" uid="uid://10fws1g0wj0d" path="res://Sprites/Slime/Individual Sprites/slime-die-1.png" id="6_uo2fs"]
+[ext_resource type="Texture2D" uid="uid://dkhb7pljffd4h" path="res://Sprites/Slime/Individual Sprites/slime-die-2.png" id="7_d5eny"]
 [ext_resource type="Texture2D" uid="uid://bek8bl18ovie6" path="res://Sprites/Slime/Individual Sprites/slime-move-2.png" id="7_rng1v"]
 [ext_resource type="Texture2D" uid="uid://cxqqwsvkfcc2i" path="res://Sprites/Slime/Individual Sprites/slime-jump-2.png" id="7_vfvir"]
 [ext_resource type="Texture2D" uid="uid://ck6cqpr16vppv" path="res://Sprites/Slime/Individual Sprites/slime-move-3.png" id="8_1eifw"]
+[ext_resource type="Texture2D" uid="uid://cyo160j7m4qan" path="res://Sprites/Slime/Individual Sprites/slime-die-3.png" id="8_6b4cc"]
 [ext_resource type="Texture2D" uid="uid://c1sax1abp36kn" path="res://Sprites/Slime/Individual Sprites/slime-jump-3.png" id="8_847p3"]
 [ext_resource type="Texture2D" uid="uid://bpxyd1l00jhrh" path="res://Sprites/Slime/Individual Sprites/slime-jump-4.png" id="9_n2nvw"]
 
@@ -34,6 +38,23 @@ animations = [{
 "loop": false,
 "name": &"attack",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_24gwg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uo2fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d5eny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6b4cc")
+}],
+"loop": false,
+"name": &"death",
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -99,7 +120,7 @@ script = ExtResource("1_g5twj")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_qdtyl")
-animation = &"idle"
+animation = &"death"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
