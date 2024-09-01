@@ -28,10 +28,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _physics_process(delta):
-	
-
-
-		# Add the gravity.
+	if dead:
+		return
+	else:# Add the gravity.
 		if not is_on_floor():
 			velocity.y += gravity * delta
 		# Get the input direction and handle the movement/deceleration.
@@ -64,8 +63,9 @@ func _physics_process(delta):
 #death
 func _on_hitbox_area_entered(area):
 	if area.is_in_group("Death"):
+		dead = true
 		sprite.play("death")
-		await get_tree().create_timer(.8).timeout
+		await get_tree().create_timer(1).timeout
 		get_tree().change_scene_to_file("res://Scenes/death_screen.tscn")
 	elif area.is_in_group("End"):
 		get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")
