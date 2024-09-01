@@ -71,7 +71,10 @@ func _on_hitbox_area_entered(area):
 		get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")
 #shooting code
 func _input(event):
-	if event.is_action_pressed("Fire"):
-		var new_blob = blob.instantiate()
-		new_blob.global_position = global_position
-		add_sibling(new_blob)
+	if dead:
+		return
+	else:
+		if event.is_action_pressed("Fire"):
+			var new_blob = blob.instantiate()
+			new_blob.global_position = global_position
+			world.add_child(new_blob)  
