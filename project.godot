@@ -15,18 +15,10 @@ run/main_scene="res://Scenes/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-Global="*res://Global.gd"
-
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-
-[global_group]
-
-Enemy_Death=""
 
 [input]
 

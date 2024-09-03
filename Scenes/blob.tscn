@@ -1,29 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://pibt23mx2pa1"]
+[gd_scene load_steps=4 format=3 uid="uid://cf670magjonr6"]
 
 [ext_resource type="Texture2D" uid="uid://cacjnu30evl0k" path="res://Sprites/Slime/Individual Sprites/projectile2.png" id="1_chske"]
+[ext_resource type="Script" path="res://Scenes/blob.gd" id="1_gawlj"]
 
-[sub_resource type="GDScript" id="GDScript_ibsu4"]
-script/source = "extends Area2D
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_koa0w"]
 
-var speed = 350
-@export var direction = Vector2.RIGHT
-
-func _process(delta: float) -> void:
-	translate(direction * speed * delta)
-"
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bgbpi"]
-radius = 5.99991
-height = 32.0107
-
-[node name="blob" type="Area2D" groups=["Enemy_Death"]]
-scale = Vector2(0.2133, 0.2133)
-script = SubResource("GDScript_ibsu4")
+[node name="blob" type="Area2D"]
+script = ExtResource("1_gawlj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.287903, 0.287903)
 texture = ExtResource("1_chske")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -1)
-rotation = -1.57637
-shape = SubResource("CapsuleShape2D_bgbpi")
+rotation = -1.57086
+scale = Vector2(0.214454, 0.312201)
+shape = SubResource("CapsuleShape2D_koa0w")

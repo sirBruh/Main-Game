@@ -13,15 +13,16 @@ func _ready():
 func _process(delta):
 	if dead:
 		return
-	translate(Vector2.RIGHT * direction)
-	if direction < 0:
-		sprite.flip_h = true
-	elif direction > 0:
-		sprite.flip_h = false
-	if position.x > right_limit:
-		direction = -1
-	elif position.x < left_limit:
-		direction = 1
+	else:
+		translate(Vector2.RIGHT * direction)
+		if direction < 0:
+			sprite.flip_h = true
+		elif direction > 0:
+			sprite.flip_h = false
+		if position.x > right_limit:
+			direction = -1
+		elif position.x < left_limit:
+			direction = 1
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
