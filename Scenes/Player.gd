@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var speed = 30
 @export var max_speed = 200
 @export var friction = 3
-@export var jump_velocity = -400
+@export var jump_velocity = -350
 const blob = preload("res://Scenes/blob.tscn")
 @onready var world = get_node("/root/World")
 @onready var direction = Vector2.ZERO

@@ -24,10 +24,11 @@ texture = ExtResource("2_1nakb")
 
 [node name="Menu" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1671.0
-offset_top = 43.0
-offset_right = 1888.0
-offset_bottom = 135.0
+offset_left = 1758.0
+offset_top = 42.0
+offset_right = 1975.0
+offset_bottom = 134.0
+scale = Vector2(0.520197, 0.509259)
 icon = ExtResource("3_t1des")
 flat = true
 
