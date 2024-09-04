@@ -8,7 +8,7 @@ extends CharacterBody2D
 const blob = preload("res://Scenes/blob.tscn")
 @onready var world = get_node("/root/World")
 @onready var direction = Vector2.ZERO
-@export var direction_facing = "right"
+
 @onready var sprite = $Sprite
 var dead = false
 #other vars
@@ -48,10 +48,6 @@ func _physics_process(delta):
 		#running animation
 		if velocity.x != 0 and is_on_floor():
 			sprite.play("run")
-			if velocity.x > 0:
-				direction_facing == "right"
-			elif velocity.x < 0:
-				direction_facing == "left"
 	#idle animation
 		elif velocity.x == 0 and is_on_floor():
 			sprite.play("idle")
@@ -77,4 +73,4 @@ func _input(event):
 		if event.is_action_pressed("Fire"):
 			var new_blob = blob.instantiate()
 			new_blob.global_position = global_position
-			world.add_child(new_blob)  
+			world.add_child(new_blob)

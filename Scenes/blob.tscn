@@ -1,18 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://cf670magjonr6"]
+[gd_scene load_steps=4 format=3 uid="uid://c6aax37s7xo6o"]
 
 [ext_resource type="Texture2D" uid="uid://cacjnu30evl0k" path="res://Sprites/Slime/Individual Sprites/projectile2.png" id="1_chske"]
-[ext_resource type="Script" path="res://Scenes/blob.gd" id="1_gawlj"]
+[ext_resource type="Script" path="res://Scenes/blob.gd" id="1_nv3sm"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_koa0w"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v57nt"]
 
-[node name="blob" type="Area2D"]
-script = ExtResource("1_gawlj")
+[node name="blob" type="Area2D" groups=["Enemy_Die"]]
+script = ExtResource("1_nv3sm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.287903, 0.287903)
+scale = Vector2(0.26875, 0.26875)
 texture = ExtResource("1_chske")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = -1.57086
-scale = Vector2(0.214454, 0.312201)
-shape = SubResource("CapsuleShape2D_koa0w")
+rotation = -1.57572
+scale = Vector2(0.176307, 0.30225)
+shape = SubResource("CapsuleShape2D_v57nt")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

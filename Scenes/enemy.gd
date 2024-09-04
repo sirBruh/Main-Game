@@ -4,6 +4,7 @@ extends Area2D
 var direction = 1
 @onready var sprite = $AnimatedSprite2D
 var dead = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -23,10 +24,8 @@ func _process(delta):
 			direction = -1
 		elif position.x < left_limit:
 			direction = 1
-
-
-func _on_hitbox_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Enemy_Death"):
+func _on_hitbox_area_entered(area):
+	if area.is_in_group("Enemy_Die"):
 		dead = true
 		sprite.play("die")
 		await sprite.animation_finished
