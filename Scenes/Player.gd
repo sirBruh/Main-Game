@@ -54,7 +54,7 @@ func _physics_process(delta):
 		elif velocity.x == 0 and is_on_floor():
 			sprite.play("idle")
 	#here is the code for jumping
-		if Input.is_action_just_pressed("jump") and is_on_floor():
+		if velocity.y > 0 and is_on_floor():
 			velocity.y = jump_velocity
 			sprite.play("jump")
 		move_and_slide()
