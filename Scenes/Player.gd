@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+#These are all variables that are used in this code
 @export var speed = 30
 @export var max_speed = 200
 @export var friction = 3
@@ -26,11 +26,11 @@ func ready():
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-
+#this func is responsible for the physics of the game
 func _physics_process(delta):
 	if dead:
 		return
-	else:# Add the gravity.
+	else:
 		if not is_on_floor():
 			velocity.y += gravity * delta
 		# Get the input direction and handle the movement/deceleration.
@@ -46,17 +46,19 @@ func _physics_process(delta):
 		elif Input.is_action_just_pressed("walk_right") or velocity.x > 0:
 			sprite.flip_h = true
 		#running animation
-		if velocity.x != 0 and is_on_floor():
+		if velocity.x < 0 and is_on_floor():
+			sprite.play("back_run")
+		elif velocity.x > 0 and is_on_floor():
 			sprite.play("run")
-	#idle animation
+	#this code plays the idle animation
 		elif velocity.x == 0 and is_on_floor():
 			sprite.play("idle")
-	#jump animation
+	#here is the code for jumping
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = jump_velocity
 			sprite.play("jump")
 		move_and_slide()
-#death
+#this func is responsible for triggering the death
 func _on_hitbox_area_entered(area):
 	if area.is_in_group("Death"):
 		dead = true
@@ -65,7 +67,7 @@ func _on_hitbox_area_entered(area):
 		get_tree().change_scene_to_file("res://Scenes/death_screen.tscn")
 	elif area.is_in_group("End"):
 		get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")
-#shooting code
+#this func is the code for shooting
 func _input(event):
 	if dead:
 		return

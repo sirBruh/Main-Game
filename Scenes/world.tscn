@@ -332,6 +332,7 @@ position = Vector2(35, 37)
 scale = Vector2(0.600001, 0.600001)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+visible = false
 zoom = Vector2(2.5, 2.5)
 limit_left = -1000000
 limit_top = -1000000
