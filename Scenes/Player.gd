@@ -11,7 +11,7 @@ var direction = Vector2.ZERO
 
 @onready var sprite = $Sprite
 var dead = false
-#other vars
+#other vars 
 #@export var start_gravity = 1700
 #@export var coyote_time = 140 # in ms
 #@export var jump_buffer_time = 100 # in ms
