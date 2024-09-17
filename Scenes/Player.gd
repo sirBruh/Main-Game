@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var jump_velocity = -350
 const blob = preload("res://Scenes/blob.tscn")
 @onready var world = get_node("/root/World")
-@onready var direction = Vector2.ZERO
+var direction = Vector2.ZERO
 
 @onready var sprite = $Sprite
 var dead = false
@@ -46,15 +46,13 @@ func _physics_process(delta):
 		elif Input.is_action_just_pressed("walk_right") or velocity.x > 0:
 			sprite.flip_h = true
 		#running animation
-		if velocity.x < 0 and is_on_floor():
-			sprite.play("back_run")
-		elif velocity.x > 0 and is_on_floor():
+		if velocity.x != 0 and is_on_floor():
 			sprite.play("run")
 	#this code plays the idle animation
 		elif velocity.x == 0 and is_on_floor():
 			sprite.play("idle")
 	#here is the code for jumping
-		if velocity.y > 0 and is_on_floor():
+		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = jump_velocity
 			sprite.play("jump")
 		move_and_slide()
