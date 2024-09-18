@@ -8,7 +8,6 @@ extends CharacterBody2D
 const blob = preload("res://Scenes/blob.tscn")
 @onready var world = get_node("/root/World")
 var direction = Vector2.ZERO
-
 @onready var sprite = $Sprite
 var dead = false
 #other vars 
@@ -28,6 +27,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 #this func is responsible for the physics of the game
 func _physics_process(delta):
+	if velocity.x == 0:
+		sprite.flip_h = true
 	if dead:
 		return
 	else:
@@ -47,7 +48,10 @@ func _physics_process(delta):
 			sprite.flip_h = true
 		#running animation
 		if velocity.x != 0 and is_on_floor():
-			sprite.play("run")
+			if velocity.x > 0:
+				sprite.play("run")
+			elif velocity.x < 0:
+				sprite.play("back_run")
 	#this code plays the idle animation
 		elif velocity.x == 0 and is_on_floor():
 			sprite.play("idle")
