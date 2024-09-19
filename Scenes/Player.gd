@@ -59,6 +59,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = jump_velocity
 			sprite.play("jump")
+		#if velocity.y < 0:
 		move_and_slide()
 #this func is responsible for triggering the death
 func _on_hitbox_area_entered(area):
@@ -78,3 +79,9 @@ func _input(event):
 			var new_blob = blob.instantiate()
 			new_blob.global_position = global_position
 			world.add_child(new_blob)
+
+
+
+
+func _on_sprite_animation_finished() -> void:
+	print("test")

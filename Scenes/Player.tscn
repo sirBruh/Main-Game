@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://prxahbc8ihrk"]
+[gd_scene load_steps=33 format=3 uid="uid://prxahbc8ihrk"]
 
 [ext_resource type="Texture2D" uid="uid://dp75v1mhcavoj" path="res://Sprites/Slime/Individual Sprites/slime-idle-0.png" id="1_8j41k"]
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_g5twj"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://cyo160j7m4qan" path="res://Sprites/Slime/Individual Sprites/slime-die-3.png" id="8_6b4cc"]
 [ext_resource type="Texture2D" uid="uid://c1sax1abp36kn" path="res://Sprites/Slime/Individual Sprites/slime-jump-3.png" id="8_847p3"]
 [ext_resource type="Texture2D" uid="uid://bpxyd1l00jhrh" path="res://Sprites/Slime/Individual Sprites/slime-jump-4.png" id="9_n2nvw"]
+[ext_resource type="Texture2D" uid="uid://6ecrtxjkb576" path="res://Sprites/Slime/Individual Sprites/New Piskel (3).png" id="10_n2a1o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ixxnx"]
 atlas = ExtResource("5_rwhrs")
@@ -35,6 +36,22 @@ region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_105i0"]
 atlas = ExtResource("5_rwhrs")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nx88v"]
+atlas = ExtResource("10_n2a1o")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1f6r"]
+atlas = ExtResource("10_n2a1o")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kda7k"]
+atlas = ExtResource("10_n2a1o")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyc3e"]
+atlas = ExtResource("10_n2a1o")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qdtyl"]
@@ -89,6 +106,23 @@ animations = [{
 "loop": false,
 "name": &"death",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nx88v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1f6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kda7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyc3e")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -154,8 +188,10 @@ script = ExtResource("1_g5twj")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_qdtyl")
-animation = &"run"
+animation = &"fall"
 autoplay = "idle"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 1)
@@ -177,4 +213,5 @@ position = Vector2(2, 1)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
 
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
