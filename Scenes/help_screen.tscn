@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://dnacmaikowslt"]
+
+[ext_resource type="Script" path="res://help_screen.gd" id="1_oxn6u"]
+[ext_resource type="Texture2D" uid="uid://b2nby1xkhmeqa" path="res://Sprites/Tilemap/Dungeon Tile Set/Help menu.png" id="2_1nakb"]
+[ext_resource type="Texture2D" uid="uid://bn5p7xnojcmql" path="res://Sprites/Buttons & Titles/c7447af6196189cebef054bacc4f4581-1.png (1)-1.png (1).png" id="3_t1des"]
+[ext_resource type="Texture2D" uid="uid://chitjetw7imvg" path="res://Sprites/Slime/Individual Sprites/slime-jump-0.png" id="4_0y284"]
+[ext_resource type="Texture2D" uid="uid://ck6cqpr16vppv" path="res://Sprites/Slime/Individual Sprites/slime-move-3.png" id="5_6enfl"]
+[ext_resource type="Texture2D" uid="uid://dsrcjwvfr2o2i" path="res://Sprites/Slime/Individual Sprites/slime-attack-1.png" id="6_r7rwj"]
+
+[node name="Help Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oxn6u")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_1nakb")
+
+[node name="Menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1758.0
+offset_top = 42.0
+offset_right = 1975.0
+offset_bottom = 134.0
+scale = Vector2(0.520197, 0.509259)
+icon = ExtResource("3_t1des")
+flat = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(1454.5, 414)
+scale = Vector2(5.78125, 5.625)
+texture = ExtResource("4_0y284")
+flip_h = true
+
+[node name="Sprite1" type="Sprite2D" parent="."]
+position = Vector2(237, 398)
+scale = Vector2(10.6563, 10.58)
+texture = ExtResource("5_6enfl")
+
+[node name="Sprite2" type="Sprite2D" parent="."]
+position = Vector2(662, 398)
+scale = Vector2(10.6563, 10.58)
+texture = ExtResource("5_6enfl")
+flip_h = true
+
+[node name="Sprite3" type="Sprite2D" parent="."]
+position = Vector2(1267, 893)
+scale = Vector2(8.23437, 8.41)
+texture = ExtResource("5_6enfl")
+flip_h = true
+
+[node name="Sprite4" type="Sprite2D" parent="."]
+position = Vector2(598, 915)
+scale = Vector2(8.34375, 7.53)
+texture = ExtResource("6_r7rwj")
+flip_h = true
+
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

@@ -1,21 +1,129 @@
-[gd_scene load_steps=17 format=3 uid="uid://prxahbc8ihrk"]
+[gd_scene load_steps=33 format=3 uid="uid://prxahbc8ihrk"]
 
 [ext_resource type="Texture2D" uid="uid://dp75v1mhcavoj" path="res://Sprites/Slime/Individual Sprites/slime-idle-0.png" id="1_8j41k"]
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_g5twj"]
 [ext_resource type="Texture2D" uid="uid://cqd2m0t1sibqa" path="res://Sprites/Slime/Individual Sprites/slime-idle-1.png" id="2_8h7mh"]
+[ext_resource type="Texture2D" uid="uid://dlc8my465igd2" path="res://Sprites/Slime/Individual Sprites/slime-attack-0.png" id="2_im5qi"]
 [ext_resource type="Texture2D" uid="uid://llhdcra4dxlj" path="res://Sprites/Slime/Individual Sprites/slime-idle-2.png" id="3_a550s"]
+[ext_resource type="Texture2D" uid="uid://dsrcjwvfr2o2i" path="res://Sprites/Slime/Individual Sprites/slime-attack-1.png" id="3_vqdij"]
 [ext_resource type="Texture2D" uid="uid://b0teroxtb6n4j" path="res://Sprites/Slime/Individual Sprites/slime-idle-3.png" id="4_5dn3m"]
 [ext_resource type="Texture2D" uid="uid://ba80eu2a4qb4w" path="res://Sprites/Slime/Individual Sprites/slime-move-0.png" id="5_0o3o0"]
+[ext_resource type="Texture2D" uid="uid://bn1xvab7m28fq" path="res://Sprites/Slime/Individual Sprites/slime-die-0.png" id="5_24gwg"]
+[ext_resource type="Texture2D" uid="uid://dj4ud3irpn6hy" path="res://Sprites/New Piskel (2) (1).png" id="5_rwhrs"]
 [ext_resource type="Texture2D" uid="uid://bvubuq3giypls" path="res://Sprites/Slime/Individual Sprites/slime-move-1.png" id="6_r2qly"]
 [ext_resource type="Texture2D" uid="uid://chitjetw7imvg" path="res://Sprites/Slime/Individual Sprites/slime-jump-0.png" id="6_r3pqm"]
+[ext_resource type="Texture2D" uid="uid://10fws1g0wj0d" path="res://Sprites/Slime/Individual Sprites/slime-die-1.png" id="6_uo2fs"]
+[ext_resource type="Texture2D" uid="uid://dkhb7pljffd4h" path="res://Sprites/Slime/Individual Sprites/slime-die-2.png" id="7_d5eny"]
 [ext_resource type="Texture2D" uid="uid://bek8bl18ovie6" path="res://Sprites/Slime/Individual Sprites/slime-move-2.png" id="7_rng1v"]
 [ext_resource type="Texture2D" uid="uid://cxqqwsvkfcc2i" path="res://Sprites/Slime/Individual Sprites/slime-jump-2.png" id="7_vfvir"]
 [ext_resource type="Texture2D" uid="uid://ck6cqpr16vppv" path="res://Sprites/Slime/Individual Sprites/slime-move-3.png" id="8_1eifw"]
+[ext_resource type="Texture2D" uid="uid://cyo160j7m4qan" path="res://Sprites/Slime/Individual Sprites/slime-die-3.png" id="8_6b4cc"]
 [ext_resource type="Texture2D" uid="uid://c1sax1abp36kn" path="res://Sprites/Slime/Individual Sprites/slime-jump-3.png" id="8_847p3"]
 [ext_resource type="Texture2D" uid="uid://bpxyd1l00jhrh" path="res://Sprites/Slime/Individual Sprites/slime-jump-4.png" id="9_n2nvw"]
+[ext_resource type="Texture2D" uid="uid://6ecrtxjkb576" path="res://Sprites/Slime/Individual Sprites/New Piskel (3).png" id="10_n2a1o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixxnx"]
+atlas = ExtResource("5_rwhrs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6bf4"]
+atlas = ExtResource("5_rwhrs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xcec"]
+atlas = ExtResource("5_rwhrs")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_105i0"]
+atlas = ExtResource("5_rwhrs")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nx88v"]
+atlas = ExtResource("10_n2a1o")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1f6r"]
+atlas = ExtResource("10_n2a1o")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kda7k"]
+atlas = ExtResource("10_n2a1o")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyc3e"]
+atlas = ExtResource("10_n2a1o")
+region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qdtyl"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_im5qi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vqdij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_im5qi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1eifw")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixxnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6bf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xcec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_105i0")
+}],
+"loop": true,
+"name": &"back_run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_24gwg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uo2fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d5eny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6b4cc")
+}],
+"loop": false,
+"name": &"death",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nx88v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1f6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kda7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyc3e")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_8j41k")
@@ -74,13 +182,16 @@ size = Vector2(19, 15.3571)
 [sub_resource type="CircleShape2D" id="CircleShape2D_vd3bk"]
 radius = 6.10744
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_g5twj")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_qdtyl")
-animation = &"jump"
+animation = &"fall"
+autoplay = "idle"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 1)
@@ -90,8 +201,17 @@ shape = SubResource("RectangleShape2D_xmitj")
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(1, 1)
+position = Vector2(1, 2)
 scale = Vector2(1.53501, -0.756361)
 shape = SubResource("CircleShape2D_vd3bk")
 
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(2, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite")
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
