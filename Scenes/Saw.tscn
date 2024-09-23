@@ -1,6 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b1k634x53bh4m"]
 
-[ext_resource type="Texture2D" uid="uid://b4x8ncvfkw540" path="res://Sprites/Saw.png" id="1_ockqs"]
+[ext_resource type="Texture2D" uid="uid://b4x8ncvfkw540" path="res://Sprites/Tilemap/Dungeon Tile Set/Saw.png" id="1_ockqs"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k024f"]
 atlas = ExtResource("1_ockqs")
