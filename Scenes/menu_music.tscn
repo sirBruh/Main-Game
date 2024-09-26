@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdfiq37s2l2d3"]
-
-[ext_resource type="AudioStream" uid="uid://deymdm8kecnn1" path="res://Sprites/all dropping 8 bit beats from roblox.mp3" id="1_0jyhf"]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_0jyhf")
-autoplay = true

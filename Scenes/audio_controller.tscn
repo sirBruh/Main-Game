@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpdulxhra104u"]
+
+[ext_resource type="AudioStream" uid="uid://bnxjefccawabe" path="res://Sprites/eco-technology-145636.mp3" id="1_g0n0o"]
+[ext_resource type="Script" path="res://Scenes/audio_controller.gd" id="1_qmya0"]
+[ext_resource type="AudioStream" uid="uid://h28x0u1ohlwx" path="res://Sprites/dark-piano-ambient-background-music-together-alone-216674.mp3" id="2_orqrk"]
+[ext_resource type="AudioStream" uid="uid://deymdm8kecnn1" path="res://Sprites/all dropping 8 bit beats from roblox.mp3" id="4_h4ucj"]
+
+[node name="AudioController" type="Node2D"]
+script = ExtResource("1_qmya0")
+
+[node name="Menumusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_g0n0o")
+
+[node name="Mainmusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_orqrk")
+
+[node name="Endmusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_h4ucj")
+pitch_scale = 0.5

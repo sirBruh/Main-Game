@@ -328,7 +328,7 @@ position = Vector2(1721, 451)
 scale = Vector2(451.322, -1.84556)
 
 [node name="Player" parent="." instance=ExtResource("1_i3bq6")]
-position = Vector2(35, 37)
+position = Vector2(36, 43)
 scale = Vector2(0.600001, 0.600001)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
